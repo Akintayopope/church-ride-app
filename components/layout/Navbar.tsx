@@ -1,6 +1,10 @@
-import { member } from "@/lib/data";
+import type { MemberProfile } from "@/lib/types";
 
-export default function Navbar() {
+type NavbarProps = {
+  member: MemberProfile;
+};
+
+export default function Navbar({ member }: NavbarProps) {
   return (
     <header className="mb-[30px] flex w-full items-center justify-between rounded-[20px] bg-white/95 px-[35px] py-[25px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur-[10px]">
       <div className="flex items-center gap-[15px]">
@@ -12,6 +16,7 @@ export default function Navbar() {
           <h1 className="text-[24px] font-bold leading-tight text-[#2d3748]">
             Winners Chapel Winnipeg
           </h1>
+
           <p className="mt-[4px] text-[13px] font-medium text-[#718096]">
             Ride Request & Management
           </p>
@@ -28,7 +33,10 @@ export default function Navbar() {
         </div>
 
         <div className="text-right">
-          <p className="text-sm font-bold text-[#2d3748]">{member.name}</p>
+          <p className="text-sm font-bold text-[#2d3748]">
+            {member.name}
+          </p>
+
           <p className="text-[13px] font-medium text-[#718096]">
             Member Since {member.memberSince}
           </p>

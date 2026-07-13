@@ -1,6 +1,12 @@
-import { member } from "@/lib/data";
+import type { MemberProfile } from "@/lib/types";
 
-export default function WelcomeCard() {
+type WelcomeCardProps = {
+    member: MemberProfile;
+};
+
+export default function WelcomeCard({
+    member,
+}: WelcomeCardProps) {
     return (
         <div className="rounded-xl bg-slate-100 px-6 py-6 text-center">
             <h1 className="text-2xl font-bold text-slate-800">
